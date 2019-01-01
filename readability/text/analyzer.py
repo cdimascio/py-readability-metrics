@@ -1,6 +1,7 @@
 import re
 from .syllables import count as count_syllables
 from nltk.tokenize import sent_tokenize, TweetTokenizer
+from nltk.tag import pos_tag
 
 
 class AnalyzerStatistics:
@@ -26,6 +27,10 @@ class AnalyzerStatistics:
     @property
     def num_sentences(self):
         return self.stats['num_sentences']
+
+    @property
+    def num_gunning_complex(self):
+        return self.stats['num_gunning_complex']
 
     @property
     def avg_words_per_sentence(self):
@@ -63,14 +68,24 @@ class Analyzer:
         poly_syllable_count = 0
         word_count = 0
         letters_count = 0
+        gunning_complex_count = 0
+
+        def is_gunning_complex(t, syllable_count):
+            return syllable_count >= 3 and \
+                not (self._is_proper_noun(t) or
+                     self._is_compound_word(t))
 
         for t in tokens:
+
             if not self._is_punctuation(t):
                 word_count += 1
                 word_syllable_count = count_syllables(t)
                 syllable_count += word_syllable_count
                 letters_count += len(t)
                 poly_syllable_count += 1 if word_syllable_count >= 3 else 0
+                gunning_complex_count += \
+                    1 if is_gunning_complex(t, word_syllable_count) \
+                    else 0
 
         sentence_count = len(self._tokenize_sentences(text))
 
@@ -80,4 +95,12 @@ class Analyzer:
             'num_words': word_count,
             'num_sentences': sentence_count,
             'num_letters': letters_count,
+            'num_gunning_complex': gunning_complex_count,
         }
+
+    def _is_proper_noun(self, token):
+        pos = pos_tag(token)[0][1]
+        return pos == 'NNP'
+
+    def _is_compound_word(self, token):
+        return re.match('.*[-].*', token) is not None

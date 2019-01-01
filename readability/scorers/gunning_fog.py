@@ -26,9 +26,10 @@ class GunningFog:
 
     def _score(self):
         s = self._stats
+        print(s)
         word_per_sent = s.num_words / s.num_sentences
-        poly_syllables_per_word = s.num_poly_syllable_words / s.num_words
-        return 0.4 * (word_per_sent + poly_syllables_per_word)
+        poly_syllables_per_word = s.num_gunning_complex / s.num_words
+        return 0.4 * (word_per_sent + 100 * poly_syllables_per_word)
 
     def _grade_level(self, score):
         rounded = round(score)

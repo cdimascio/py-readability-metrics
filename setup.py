@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='py-readability-metrics',
-    version='0.11.8',
+    version='0.12.1',
     author='Carmine DiMAscio',
     author_email='cdimascio@gmail.com',
     description='Calculate readability scores. e.g. Flesch, Flesch-Kincaid, and more',
