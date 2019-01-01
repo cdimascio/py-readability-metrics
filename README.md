@@ -45,7 +45,7 @@ r.smog()
 - [SMOG](#smog)
 - [Linear Write](#linear-write)
 
-## Readability Metric Details
+## Readability Metric Details and Properties
 
 All metrics provide a `score` attribute. See details below to capture additional detail per metric.
 
