@@ -34,6 +34,17 @@ r.smog()
 
 **\*Note:** `text` must contain >= 100 words\*
 
+## Supported Metrics
+
+- [Flesch Kincaid Grade Level](#flesch-kincaid-grade-level)
+- [Flesch Reading Ease](#flesch-reading-ease)
+- [Dale Chall Readability](#dale-chall-readability)
+- [Automated Readability Index (ARI)](#automated-readability-index-ari)
+- [Coleman Liau Index](#coleman-liau-index)
+- [Gunning Fog](#gunning-fog)
+- [SMOG](#smog)
+- [Linear Write](#linear-write)
+
 ## Readability Metric Details
 
 All metrics provide a `score` attribute. See details below to capture additional detail per metric.
@@ -99,7 +110,7 @@ print(dc.score)
 print(dc.grade_levels)
 ```
 
-### Automated Readability Index
+### Automated Readability Index (ARI)
 
 Unlike the other indices, the ARI, along with the Coleman-Liau, relies on a factor of characters per word, instead of the usual syllables per word. ARI is widely used on all types of texts.
 
