@@ -27,6 +27,8 @@ r.flesch()
 r.gunning_fog()
 r.coleman_liau()
 r.dale_chall()
+r.ari()
+r.linear_write()
 ```
 
 **\*Note:** `text` must contain >= 100 words\*
