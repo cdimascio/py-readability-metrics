@@ -53,10 +53,14 @@ class AnalyzerStatistics:
 
 
 class Analyzer:
-    def __init__(self, text):
+    def __init__(self):
+        pass
+
+    def analyze(self, text):
         self._dale_chall_set = self._load_dale_chall()
         stats = self._statistics(text)
-        self.statistics = AnalyzerStatistics(stats)
+        self.sentences = stats['sentences']  # hack for smog
+        return AnalyzerStatistics(stats)
 
     def _tokenize_sentences(self, text):
         return sent_tokenize(text)
@@ -102,7 +106,8 @@ class Analyzer:
                 dale_chall_complex_count += \
                     1 if is_dale_chall_complex(t) else 0
 
-        sentence_count = len(self._tokenize_sentences(text))
+        sentences = self._tokenize_sentences(text)
+        sentence_count = len(sentences)
 
         return {
             'num_syllables': syllable_count,
@@ -112,6 +117,7 @@ class Analyzer:
             'num_letters': letters_count,
             'num_gunning_complex': gunning_complex_count,
             'num_dale_chall_complex': dale_chall_complex_count,
+            'sentences': sentences,
         }
 
     def _is_proper_noun(self, token):
