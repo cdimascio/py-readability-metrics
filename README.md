@@ -1,6 +1,10 @@
 # py-readability-metrics
 
-Score text difficulty usings a variety of _readability_ metrics including: Flesch-Kincaid Grade Level, Flesch Reading Ease, Gunning Fog and more
+Score the _readability_ of text using popular readability metrics including: Flesch-Kincaid Grade Level, Flesch Reading Ease, Gunning Fog and more
+
+<p align="center">
+ <img src="https://raw.githubusercontent.com/cdimascio/py-readability-metrics/master/assets/py-readability-metrics.png" width="500"></>
+</p>
 
 ## Install
 
@@ -13,10 +17,13 @@ pip install py-readability-metrics
 ```python
 from readability import Readability
 
- r = Readability(text)
- print(r.flesch_kincaid())
- print(r.flesch())
- print(r.gunning_fog())
+text = ... # a text containing 100 or more words
+
+r = Readability(text)
+print(r.flesch_kincaid())
+print(r.flesch())
+print(r.gunning_fog())
+print(r.coleman_liau())
 ```
 
 ### Flesch-Kincaid Grade Level
