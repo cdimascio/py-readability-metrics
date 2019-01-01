@@ -10,11 +10,11 @@ class ReadabilityTest(unittest.TestCase):
         """
         self.readability = Readability(text)
 
-    def test_flesch_kincaid(self):
-        r = self.readability.flesch_kincaid()
+    def test_coleman_liau(self):
+        r = self.readability.coleman_liau()
         print(r)
-        self.assertEqual(10.125531135531137, r.score)
-        self.assertEqual('10', r.grade_level)
+        self.assertEqual(10.673162393162393, r.score)
+        self.assertEqual('11', r.grade_level)
 
     def test_flesch(self):
         r = self.readability.flesch()
@@ -22,6 +22,12 @@ class ReadabilityTest(unittest.TestCase):
         self.assertEqual(51.039230769230784, r.score)
         self.assertEqual(['10', '11', '12'], r.grade_levels)
         self.assertEqual('fairly_difficult', r.ease)
+
+    def test_flesch_kincaid(self):
+        r = self.readability.flesch_kincaid()
+        print(r)
+        self.assertEqual(10.125531135531137, r.score)
+        self.assertEqual('10', r.grade_level)
 
     def test_gunning_fog(self):
         r = self.readability.gunning_fog()

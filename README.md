@@ -54,6 +54,23 @@ Result(
 )
 ```
 
+### Coleman Liau Index
+
+**method:**
+
+```python
+r.coleman_liau()
+```
+
+**returns:**
+
+```python
+Result(
+    score, # float
+    grade_level # string
+)
+```
+
 ### Gunning Fog
 
 **method:**
