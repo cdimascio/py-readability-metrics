@@ -1,6 +1,10 @@
 # py-readability-metrics
 
-Score text difficulty usings a variety of _readability_ metrics including: Flesch-Kincaid Grade Level, Flesch Reading Ease, Gunning Fog and more
+Score the _readability_ of text using popular readability metrics including: Flesch-Kincaid Grade Level, Flesch Reading Ease, Gunning Fog and more
+
+<p align="center">
+ <img src="https://raw.githubusercontent.com/cdimascio/py-readability-metrics/master/assets/py-readability-metrics.png" width="500"></>
+</p>
 
 ## Install
 
@@ -13,84 +17,95 @@ pip install py-readability-metrics
 ```python
 from readability import Readability
 
- r = Readability(text)
- print(r.flesch_kincaid())
- print(r.flesch())
- print(r.gunning_fog())
+r = Readability(text)
+
+r.flesch_kincaid()
+r.flesch()
+r.gunning_fog()
+r.coleman_liau()
+```
+
+***Note:** `text` must contain >= 100 words*
+
+## Details
+
+In all examples below `r` is:
+
+```python
+r = Readability(text)
 ```
 
 ### Flesch-Kincaid Grade Level
 
-**method:**
+***method:***
 
 ```python
 r.flesch_kincaid()
 ```
 
-**returns:**
+***example:***
 
 ```python
-Result(
-    score, # float
-    grade_level # string
-)
+fk = r.flesch_kincaid()
+print(fk.score)
+print(fk.grade_level)
 ```
+
 
 ### Flesch Reading Ease
 
-**method:**
+***method:***
 
 ```python
 r.flesch()
 ```
 
-**returns:**
+***example:***
 
 ```python
-Result(
-    score, # float
-    ease, # string
-    grade_levels, # list<str>
-)
+f = r.flesch()
+print(f.score)
+print(f.ease)
+print(f.grade_levels)
 ```
 
 ### Coleman Liau Index
 
-**method:**
+***method:***
 
 ```python
 r.coleman_liau()
 ```
 
-**returns:**
+***example:***
 
 ```python
-Result(
-    score, # float
-    grade_level # string
-)
+cl = r.coleman_liau()
+print(cl.score)
+print(cl.grade_level)
 ```
+
 
 ### Gunning Fog
 
-**method:**
+***method:***
 
 ```python
 r.gunning_fog()
 ```
 
-**returns:**
+***example:***
 
 ```python
-Result(
-    score, # float
-    grade_level, # str
-)
+gf = r.gunning_fog()
+print(gf.score)
+print(gf.grade_level)
 ```
 
-## Contributing
 
-[see contributing](CONTRIBUTING.md)
+## [Contributing](CONTRIBUTING.md)
+
+Contributions are welcome!
 
 ## License
 
