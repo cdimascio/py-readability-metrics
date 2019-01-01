@@ -27,13 +27,17 @@ r.flesch()
 r.gunning_fog()
 r.coleman_liau()
 r.dale_chall()
+r.ari()
+r.linear_write()
 ```
 
 **\*Note:** `text` must contain >= 100 words\*
 
-## Details
+## Readability Metric Details
 
-In all examples below `r` is:
+All metrics provide a `score` attribute. See details below to capture additional detail per metric.
+
+*Note:* In all examples below `r` is:
 
 ```python
 r = Readability(text)
