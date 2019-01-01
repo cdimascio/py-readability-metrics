@@ -1,0 +1,2 @@
+class ReadabilityException(Exception):
+    pass
