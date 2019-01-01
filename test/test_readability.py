@@ -32,5 +32,5 @@ class ReadabilityTest(unittest.TestCase):
     def test_gunning_fog(self):
         r = self.readability.gunning_fog()
         print(r)
-        self.assertEqual(12.839560439560442, r.score)
-        self.assertEqual('college', r.grade_level)
+        self.assertEqual(12.4976800976801, r.score)
+        self.assertEqual('12', r.grade_level)

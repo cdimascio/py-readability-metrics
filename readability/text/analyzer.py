@@ -1,7 +1,7 @@
 import re
 from .syllables import count as count_syllables
 from nltk.tokenize import sent_tokenize, TweetTokenizer
-from nltk.tag import pos_tag
+# from nltk.tag import pos_tag
 
 
 class AnalyzerStatistics:
@@ -99,8 +99,9 @@ class Analyzer:
         }
 
     def _is_proper_noun(self, token):
-        pos = pos_tag(token)[0][1]
-        return pos == 'NNP'
+        # pos = pos_tag(token)[0][1]
+        # return pos == 'NNP'
+        return token[0].isupper()
 
     def _is_compound_word(self, token):
         return re.match('.*[-].*', token) is not None
