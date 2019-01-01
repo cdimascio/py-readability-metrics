@@ -20,10 +20,10 @@ from readability import Readability
 text = ... # a text containing 100 or more words
 
 r = Readability(text)
-print(r.flesch_kincaid())
-print(r.flesch())
-print(r.gunning_fog())
-print(r.coleman_liau())
+r.flesch_kincaid()
+r.flesch()
+r.gunning_fog()
+r.coleman_liau()
 ```
 
 ### Flesch-Kincaid Grade Level
@@ -34,14 +34,14 @@ print(r.coleman_liau())
 r.flesch_kincaid()
 ```
 
-**returns:**
+**example:**
 
 ```python
-Result(
-    score, # float
-    grade_level # string
-)
+fk = r.flesch_kincaid()
+print(fk.score)
+print(fk.grade_level)
 ```
+
 
 ### Flesch Reading Ease
 
@@ -51,14 +51,13 @@ Result(
 r.flesch()
 ```
 
-**returns:**
+**example:**
 
 ```python
-Result(
-    score, # float
-    ease, # string
-    grade_levels, # list<str>
-)
+f = r.flesch()
+print(f.score)
+print(f.ease)
+print(f.grade_level)
 ```
 
 ### Coleman Liau Index
@@ -69,14 +68,12 @@ Result(
 r.coleman_liau()
 ```
 
-**returns:**
-
 ```python
-Result(
-    score, # float
-    grade_level # string
-)
+cl = r.coleman_liau()
+print(cl.score)
+print(cl.grade_level)
 ```
+
 
 ### Gunning Fog
 
@@ -86,14 +83,14 @@ Result(
 r.gunning_fog()
 ```
 
-**returns:**
+**example:**
 
 ```python
-Result(
-    score, # float
-    grade_level, # str
-)
+gf = r.gunning_fog()
+print(gf.score)
+print(gf.grade_level)
 ```
+
 
 ## Contributing
 
