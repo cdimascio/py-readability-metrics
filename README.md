@@ -29,6 +29,12 @@ r.coleman_liau()
 
 ## Details
 
+In all examples below `r` is:
+
+```python
+r = Readability(text)
+```
+
 ### Flesch-Kincaid Grade Level
 
 ***method:***
