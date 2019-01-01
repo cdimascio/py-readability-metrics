@@ -194,6 +194,10 @@ print(lw.grade_level)
 
 Contributions are welcome!
 
+## References
+
+- [Readability Formulas](http://readabilityformulas.com/)
+
 ## License
 
 [MIT](LICENSE)
