@@ -37,7 +37,7 @@ r.linear_write()
 
 All metrics provide a `score` attribute. See details below to capture additional detail per metric.
 
-*Note:* In all examples below `r` is:
+_Note:_ In all examples below `r` is:
 
 ```python
 r = Readability(text)
@@ -151,6 +151,24 @@ r.gunning_fog()
 gf = r.gunning_fog()
 print(gf.score)
 print(gf.grade_level)
+```
+
+### SMOG
+
+The SMOG Readability Formula (Simple Measure of Gobbledygook) is a popular method to use on health literacy materials.
+
+**_call:_**
+
+```python
+r.smog()
+```
+
+**_example:_**
+
+```python
+s = r.smog()
+print(s.score)
+print(s.grade_level)
 ```
 
 ### Linear Write
