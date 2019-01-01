@@ -3,7 +3,7 @@
 Calculate gunning fog readability score
 """
 __title__ = 'py-readabilitiy-metrics'
-__version__ = '0.23.1'
+__version__ = '0.23.2'
 __author__ = 'Carmine DiMascio'
 __license__ = 'MIT'
 __copyright__ = 'Copyright 2019 Carmine DiMascio'
