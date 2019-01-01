@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='py-readability-metrics',
-    version='0.17.1',
+    version='0.17.3',
     author='Carmine DiMAscio',
     author_email='cdimascio@gmail.com',
     description='Calculate readability scores. e.g. Flesch, Flesch-Kincaid, and more',
@@ -16,6 +16,8 @@ setup(
     url='https://github.com/cdimascio/py-readability-metrics',
     keywords="readability metrics text difficulty grade level",
     packages=find_packages(exclude=['tests']),
+    package_data={'readability': ['data', 'data/dale_chall_porterstem.txt']},
+    include_package_data=True,
     license='MIT',
     install_requires=[
          'nltk'
