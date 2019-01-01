@@ -27,15 +27,17 @@ r.coleman_liau()
 
 ***Note:** `text` must contain >= 100 words*
 
+## Details
+
 ### Flesch-Kincaid Grade Level
 
-**method:**
+***method:***
 
 ```python
 r.flesch_kincaid()
 ```
 
-**example:**
+***example:***
 
 ```python
 fk = r.flesch_kincaid()
@@ -46,13 +48,13 @@ print(fk.grade_level)
 
 ### Flesch Reading Ease
 
-**method:**
+***method:***
 
 ```python
 r.flesch()
 ```
 
-**example:**
+***example:***
 
 ```python
 f = r.flesch()
@@ -63,11 +65,13 @@ print(f.grade_levels)
 
 ### Coleman Liau Index
 
-**method:**
+***method:***
 
 ```python
 r.coleman_liau()
 ```
+
+***example:***
 
 ```python
 cl = r.coleman_liau()
@@ -78,13 +82,13 @@ print(cl.grade_level)
 
 ### Gunning Fog
 
-**method:**
+***method:***
 
 ```python
 r.gunning_fog()
 ```
 
-**example:**
+***example:***
 
 ```python
 gf = r.gunning_fog()
