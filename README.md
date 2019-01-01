@@ -93,7 +93,7 @@ print(gf.grade_level)
 ```
 
 
-## (Contributing](CONTRIBUTING.md)
+## [Contributing](CONTRIBUTING.md)
 
 Contributions are welcome!
 
