@@ -1,5 +1,5 @@
 from .text import Analyzer
-from .scorers import ColemanLiau, Flesch, FleschKincaid, GunningFog
+from .scorers import ColemanLiau, DaleChall, Flesch, FleschKincaid, GunningFog
 
 
 class Readability:
@@ -9,6 +9,10 @@ class Readability:
     def coleman_liau(self):
         """Calculate Coleman Liau Index."""
         return ColemanLiau(self.analyzer.statistics).score()
+
+    def dale_chall(self):
+        """Calculate Dale Chall."""
+        return DaleChall(self.analyzer.statistics).score()
 
     def flesch(self):
         """Calculate Flesch Reading Ease score."""

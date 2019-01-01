@@ -16,6 +16,12 @@ class ReadabilityTest(unittest.TestCase):
         self.assertEqual(10.673162393162393, r.score)
         self.assertEqual('11', r.grade_level)
 
+    def test_dale_chall(self):
+        r = self.readability.dale_chall()
+        print(r)
+        self.assertEqual(9.32399010989011, r.score)
+        self.assertEqual(['college'], r.grade_levels)
+
     def test_flesch(self):
         r = self.readability.flesch()
         print(r)

@@ -1,6 +1,8 @@
+import os
 import re
 from .syllables import count as count_syllables
 from nltk.tokenize import sent_tokenize, TweetTokenizer
+from nltk.stem.porter import PorterStemmer
 # from nltk.tag import pos_tag
 
 
@@ -33,6 +35,10 @@ class AnalyzerStatistics:
         return self.stats['num_gunning_complex']
 
     @property
+    def num_dale_chall_complex(self):
+        return self.stats['num_dale_chall_complex']
+
+    @property
     def avg_words_per_sentence(self):
         return self.num_words / self.num_sentences
 
@@ -48,6 +54,7 @@ class AnalyzerStatistics:
 
 class Analyzer:
     def __init__(self, text):
+        self._dale_chall_set = self._load_dale_chall()
         stats = self._statistics(text)
         self.statistics = AnalyzerStatistics(stats)
 
@@ -69,11 +76,17 @@ class Analyzer:
         word_count = 0
         letters_count = 0
         gunning_complex_count = 0
+        dale_chall_complex_count = 0
+        porter_stemmer = PorterStemmer()
 
         def is_gunning_complex(t, syllable_count):
             return syllable_count >= 3 and \
                 not (self._is_proper_noun(t) or
                      self._is_compound_word(t))
+
+        def is_dale_chall_complex(t):
+            stem = porter_stemmer.stem(t.lower())
+            return stem not in self._dale_chall_set
 
         for t in tokens:
 
@@ -86,6 +99,8 @@ class Analyzer:
                 gunning_complex_count += \
                     1 if is_gunning_complex(t, word_syllable_count) \
                     else 0
+                dale_chall_complex_count += \
+                    1 if is_dale_chall_complex(t) else 0
 
         sentence_count = len(self._tokenize_sentences(text))
 
@@ -96,6 +111,7 @@ class Analyzer:
             'num_sentences': sentence_count,
             'num_letters': letters_count,
             'num_gunning_complex': gunning_complex_count,
+            'num_dale_chall_complex': dale_chall_complex_count,
         }
 
     def _is_proper_noun(self, token):
@@ -105,3 +121,10 @@ class Analyzer:
 
     def _is_compound_word(self, token):
         return re.match('.*[-].*', token) is not None
+
+    def _load_dale_chall(self):
+        file = 'dale_chall_porterstem.txt'
+        cur_path = os.path.dirname(os.path.realpath(__file__))
+        dale_chall_path = os.path.join(cur_path, '..', 'data', file)
+        with open(dale_chall_path) as f:
+            return set(line.strip() for line in f)
