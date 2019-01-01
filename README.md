@@ -58,7 +58,7 @@ r.flesch()
 f = r.flesch()
 print(f.score)
 print(f.ease)
-print(f.grade_level)
+print(f.grade_levels)
 ```
 
 ### Coleman Liau Index
