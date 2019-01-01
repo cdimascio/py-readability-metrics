@@ -93,9 +93,9 @@ print(gf.grade_level)
 ```
 
 
-## Contributing
+## (Contributing](CONTRIBUTING.md)
 
-[see contributing](CONTRIBUTING.md)
+Contributions are welcome!
 
 ## License
 
