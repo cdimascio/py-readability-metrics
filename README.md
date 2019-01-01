@@ -17,14 +17,15 @@ pip install py-readability-metrics
 ```python
 from readability import Readability
 
-text = ... # a text containing 100 or more words
-
 r = Readability(text)
+
 r.flesch_kincaid()
 r.flesch()
 r.gunning_fog()
 r.coleman_liau()
 ```
+
+***Note:** `text` must contain >= 100 words*
 
 ### Flesch-Kincaid Grade Level
 
