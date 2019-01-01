@@ -11,9 +11,8 @@ Score the _readability_ of text using popular readability metrics including: Fle
 ## Install
 
 ```shell
-pip install py-readability-metrics
-
-python -m nltk.downloader punkt
+$ pip install py-readability-metrics 
+$ python -m nltk.downloader punkt
 ```
 
 ## Usage
