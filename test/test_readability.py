@@ -47,3 +47,9 @@ class ReadabilityTest(unittest.TestCase):
         print(r)
         self.assertEqual(12.4976800976801, r.score)
         self.assertEqual('12', r.grade_level)
+
+    def test_linear_write(self):
+        r = self.readability.linear_write()
+        print(r)
+        self.assertEqual(11.214285714285714, r.score)
+        self.assertEqual('11', r.grade_level)

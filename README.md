@@ -133,7 +133,7 @@ print(cl.grade_level)
 
 ### Gunning Fog
 
-the Gunning fog index measures the readability of English writing. The index estimates the years of formal education needed to understand the text on a first reading. A fog index of 12 requires the reading level of a U.S. high school senior (around 18 years old).
+The Gunning fog index measures the readability of English writing. The index estimates the years of formal education needed to understand the text on a first reading. A fog index of 12 requires the reading level of a U.S. high school senior (around 18 years old).
 
 **_call:_**
 
@@ -147,6 +147,24 @@ r.gunning_fog()
 gf = r.gunning_fog()
 print(gf.score)
 print(gf.grade_level)
+```
+
+### Linear Write
+
+Linsear Write is a readability metric for English text, purportedly developed for the United States Air Force to help them calculate the readability of their technical manuals.
+
+**_call:_**
+
+```python
+r.linear_write()
+```
+
+**_example:_**
+
+```python
+lw = r.linear_write()
+print(lw.score)
+print(lw.grade_level)
 ```
 
 ## [Contributing](CONTRIBUTING.md)

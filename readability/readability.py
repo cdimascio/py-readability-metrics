@@ -1,5 +1,5 @@
 from .text import Analyzer
-from .scorers import ARI, ColemanLiau, DaleChall, Flesch, FleschKincaid, GunningFog
+from .scorers import ARI, ColemanLiau, DaleChall, Flesch, FleschKincaid, GunningFog, LinearWrite
 
 
 class Readability:
@@ -26,6 +26,10 @@ class Readability:
         """Calculate Flesch Kincaid Grade Level."""
         return FleschKincaid(self.analyzer.statistics).score()
 
-    def gunning_fog(self):  # , abbr=None, hyphen=None, vars={}):
+    def gunning_fog(self):
         """Calculate Gunning Fog score."""
         return GunningFog(self.analyzer.statistics).score()
+
+    def linear_write(self):
+        """Calculate Linear Write."""
+        return LinearWrite(self.analyzer.statistics).score()
