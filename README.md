@@ -1,6 +1,6 @@
 # py-readabilitiy-metrics
 
-Scores text usings a variety of _readability_ scores including: Flesch-Kincaid Grade Level, Flesch Reading Ease, and more
+Score text difficulty usings a variety of _readability_ metrics including: Flesch-Kincaid Grade Level, Flesch Reading Ease, and more
 
 ## Install
 
@@ -20,13 +20,13 @@ from readability import Readability
 
 ### Flesch-Kincaid Grade Level
 
-method:
+**method:**
 
 ```python
 r.flesch_kincaid()
 ```
 
-returns:
+**returns:**
 
 ```python
 Result(
@@ -37,13 +37,13 @@ Result(
 
 ### Flesch Reading Ease
 
-method:
+**method:**
 
 ```python
 r.flesch()
 ```
 
-returns:
+**returns:**
 
 ```python
 Result(
