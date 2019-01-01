@@ -13,6 +13,7 @@ python -m unittest discover -v
 ### Package
 
 ```shell
+rm -rf build dist py_readability_metrics.egg-info/
 python setup.py sdist bdist_wheel
-twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+twine upload dist/*
 ```
