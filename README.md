@@ -2,7 +2,7 @@
 
 ![Travis Build](https://travis-ci.org/cdimascio/py-readability-metrics.svg?branch=master) ![Python](https://img.shields.io/badge/python-%203.4%20%7C%203.5%20%7C%203.6-blue.svg) [![MIT license](https://img.shields.io/badge/License-MIT-green.svg)](https://lbesson.mit-license.org/)
 
-Score the _readability_ of text using popular readability metrics including: Flesch-Kincaid Grade Level, Flesch Reading Ease, Gunning Fog Index, Dale Chall Readability, and more
+Score the _readability_ of text using popular readability metrics including: Flesch-Kincaid Grade Level, Flesch Reading Ease, Gunning Fog Index, Dale Chall Readability, Automated Readability Index (ARI) and more
 
 <p align="center">
  <img src="https://raw.githubusercontent.com/cdimascio/py-readability-metrics/master/assets/py-readability-metrics.png" width="500"></>
@@ -89,9 +89,28 @@ r.dale_chall()
 **_example:_**
 
 ```python
-cl = dale_chall()
-print(cl.score)
-print(cl.grade_levels)
+dc = dale_chall()
+print(dc.score)
+print(dc.grade_levels)
+```
+
+### Automated Readability Index
+
+Unlike the other indices, the ARI, along with the Coleman-Liau, relies on a factor of characters per word, instead of the usual syllables per word. ARI is widely used on all types of texts.
+
+**_call:_**
+
+```python
+r.ari()
+```
+
+**_example:_**
+
+```python
+ari = r.ari()
+print(ari.score)
+print(ari.grade_levels)
+print(ari.ages)
 ```
 
 ### Coleman Liau Index
@@ -102,7 +121,7 @@ The Coleman-Liau Formula usually gives a lower grade value than any of the Kinca
 
 ```python
 r.coleman_liau()
-````
+```
 
 **_example:_**
 

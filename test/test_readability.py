@@ -10,6 +10,13 @@ class ReadabilityTest(unittest.TestCase):
         """
         self.readability = Readability(text)
 
+    def test_ari(self):
+        r = self.readability.ari()
+        print(r)
+        self.assertEqual(9.551245421245422, r.score)
+        self.assertEqual(['10'], r.grade_levels)
+        self.assertEqual([15, 16], r.ages)
+
     def test_coleman_liau(self):
         r = self.readability.coleman_liau()
         print(r)

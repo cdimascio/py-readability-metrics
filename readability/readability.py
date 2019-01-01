@@ -1,10 +1,14 @@
 from .text import Analyzer
-from .scorers import ColemanLiau, DaleChall, Flesch, FleschKincaid, GunningFog
+from .scorers import ARI, ColemanLiau, DaleChall, Flesch, FleschKincaid, GunningFog
 
 
 class Readability:
     def __init__(self, text):
         self.analyzer = Analyzer(text)
+
+    def ari(self):
+        """Calculate Automated Readability Index (ARI)."""
+        return ARI(self.analyzer.statistics).score()
 
     def coleman_liau(self):
         """Calculate Coleman Liau Index."""

@@ -32,7 +32,6 @@ class DaleChall:
         adjusted_score = raw_score + 3.6365 \
             if percent_difficult_words > .05 \
             else raw_score
-        print('raw score {}, adjusted {}'.format(raw_score, adjusted_score))
         return adjusted_score
 
     def _grade_levels(self, score):
