@@ -33,7 +33,7 @@ r.linear_write()
 
 **\*Note:** `text` must contain >= 100 words\*
 
-## Details
+## Readability Metric Details
 
 In all examples below `r` is:
 
