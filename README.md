@@ -29,6 +29,7 @@ r.coleman_liau()
 r.dale_chall()
 r.ari()
 r.linear_write()
+r.smog()
 ```
 
 **\*Note:** `text` must contain >= 100 words\*
