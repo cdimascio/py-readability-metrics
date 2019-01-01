@@ -16,6 +16,7 @@ from readability import Readability
  r = Readability(text)
  print(r.flesch_kincaid())
  print(r.flesch())
+ print(r.gunning_fog())
 ```
 
 ### Flesch-Kincaid Grade Level
@@ -50,6 +51,23 @@ Result(
     score, # float
     ease, # string
     grade_levels, # list<str>
+)
+```
+
+### Gunning Fog
+
+**method:**
+
+```python
+r.gunning_fog()
+```
+
+**returns:**
+
+```python
+Result(
+    score, # float
+    grade_level, # str
 )
 ```
 
