@@ -42,14 +42,11 @@ class AnalyzerStatistics:
 
 
 class Analyzer:
-    def __init__(self, text, nlp):
-        # doc = nlp(text)
-        # self.nlp = nlp
+    def __init__(self, text):
         stats = self._statistics(text)
         self.statistics = AnalyzerStatistics(stats)
 
     def _tokenize_sentences(self, text):
-        # list(doc.sents)
         return sent_tokenize(text)
 
     def _tokenize(self, text):
