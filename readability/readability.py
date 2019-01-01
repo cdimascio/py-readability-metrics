@@ -1,14 +1,10 @@
-import spacy
 from .text import Analyzer
 from .scorers import Flesch, FleschKincaid, GunningFog
 
-nlp = spacy.blank('en')
-nlp.add_pipe(nlp.create_pipe('sentencizer'))
-
 
 class Readability:
-    def __init__(self, text, nlp=nlp):
-        self.analyzer = Analyzer(text, nlp=nlp)
+    def __init__(self, text):
+        self.analyzer = Analyzer(text)
 
     def gunning_fog(self):  # , abbr=None, hyphen=None, vars={}):
         """Calculate Gunning Fog score."""

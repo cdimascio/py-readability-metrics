@@ -9,7 +9,7 @@ setup(
     author='Erin Hengel',
     url='https://github.com/cdimascio/py-readability',
     packages=['py-readabilitiy'],
-    install_requires=['spacy>=2.0.16'],
+    install_requires=['nltk>=3.3'],
     package_data={'readability': [], '': ['README.md', 'LICENSE']},
     package_dir={'readabiliity': 'readabiliity'},
     include_package_data=True,

@@ -1,5 +1,9 @@
 # py-readabilitiy
 
+## Install
+
+coming soon...
+
 ## Usage
 
 ```python
@@ -8,11 +12,9 @@
  r.flesch()
 ```
 
-## Test
+## Contributing
 
-```shell
-python -m unittest discover -v
-```
+[see contributing](CONTRIBUTING.md)
 
 ## License
 
