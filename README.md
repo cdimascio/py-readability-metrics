@@ -26,6 +26,7 @@ r.flesch_kincaid()
 r.flesch()
 r.gunning_fog()
 r.coleman_liau()
+r.dale_chall()
 ```
 
 **\*Note:** `text` must contain >= 100 words\*
