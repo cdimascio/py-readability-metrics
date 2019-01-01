@@ -3,11 +3,11 @@
 from setuptools import setup
 
 setup(
-    name='py-readability',
+    name='py-readability-metrics',
     version='0.0.1',
-    description='Calculate readability scores. e.g. Gunning Fog',
+    description='Calculate readability scores. e.g. Flesch, Flesch-Kincaid, and more',
     author='Carmine DiMAscio',
-    url='https://github.com/cdimascio/py-readability',
+    url='https://github.com/cdimascio/py-readability-metrics',
     packages=['py-readabilitiy-metrics'],
     install_requires=['nltk>=3.3'],
     package_data={'readability': [], '': ['README.md', 'LICENSE']},
