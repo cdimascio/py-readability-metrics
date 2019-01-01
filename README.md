@@ -10,6 +10,8 @@ Score the _readability_ of text using popular readability metrics including: Fle
 
 ```shell
 pip install py-readability-metrics
+
+python -m nltk.downloader punkt
 ```
 
 ## Usage
@@ -25,7 +27,7 @@ r.gunning_fog()
 r.coleman_liau()
 ```
 
-***Note:** `text` must contain >= 100 words*
+**\*Note:** `text` must contain >= 100 words\*
 
 ## Details
 
@@ -37,13 +39,13 @@ r = Readability(text)
 
 ### Flesch-Kincaid Grade Level
 
-***method:***
+**_method:_**
 
 ```python
 r.flesch_kincaid()
 ```
 
-***example:***
+**_example:_**
 
 ```python
 fk = r.flesch_kincaid()
@@ -51,16 +53,15 @@ print(fk.score)
 print(fk.grade_level)
 ```
 
-
 ### Flesch Reading Ease
 
-***method:***
+**_method:_**
 
 ```python
 r.flesch()
 ```
 
-***example:***
+**_example:_**
 
 ```python
 f = r.flesch()
@@ -71,13 +72,13 @@ print(f.grade_levels)
 
 ### Coleman Liau Index
 
-***method:***
+**_method:_**
 
 ```python
 r.coleman_liau()
 ```
 
-***example:***
+**_example:_**
 
 ```python
 cl = r.coleman_liau()
@@ -85,23 +86,21 @@ print(cl.score)
 print(cl.grade_level)
 ```
 
-
 ### Gunning Fog
 
-***method:***
+**_method:_**
 
 ```python
 r.gunning_fog()
 ```
 
-***example:***
+**_example:_**
 
 ```python
 gf = r.gunning_fog()
 print(gf.score)
 print(gf.grade_level)
 ```
-
 
 ## [Contributing](CONTRIBUTING.md)
 
