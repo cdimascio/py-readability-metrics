@@ -1,4 +1,4 @@
-# py-readabilitiy-metrics
+# py-readability-metrics
 
 Score text difficulty usings a variety of _readability_ metrics including: Flesch-Kincaid Grade Level, Flesch Reading Ease, and more
 
