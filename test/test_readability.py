@@ -63,6 +63,7 @@ class ReadabilityTest(unittest.TestCase):
 
         readability = Readability(text)
         r = readability.smog()
+
         print(r)
-        self.assertEqual(11.332380897952964, r.score)
-        self.assertEqual('11', r.grade_level)
+        self.assertEqual(11.819773276564941, r.score)
+        self.assertEqual('12', r.grade_level)

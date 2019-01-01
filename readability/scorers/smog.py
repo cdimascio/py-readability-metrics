@@ -36,7 +36,7 @@ class Smog:
         smog_stats = self._smog_stats
         num_complex_words = smog_stats.num_poly_syllable_words
         num_sentences = base_stats.num_sentences
-        return math.sqrt(num_complex_words * (30 / num_sentences)) + 3
+        return 1.0430 * math.sqrt(30 * num_complex_words / num_sentences) + 3.1291
 
     def _grade_level(self, score):
         return str(round(score))
