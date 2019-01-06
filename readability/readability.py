@@ -39,3 +39,13 @@ class Readability:
     def smog(self):
         """SMOG Index."""
         return Smog(self._statistics, self._analyzer.sentences).score()
+
+    def statistics(self):
+        return {
+            'num_letters': self._statistics.num_letters,
+            'num_words': self._statistics.num_words,
+            'num_sentences': self._statistics.num_sentences,
+            'num_polysyllabic_words': self._statistics.num_poly_syllable_words,
+            'avg_words_per_sentence': self._statistics.avg_words_per_sentence,
+            'avg_syllables_per_word': self._statistics.avg_syllables_per_word,
+        }

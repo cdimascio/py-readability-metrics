@@ -32,10 +32,9 @@ class Smog:
         )
 
     def _score(self):
-        base_stats = self._stats
         smog_stats = self._smog_stats
         num_complex_words = smog_stats.num_poly_syllable_words
-        num_sentences = base_stats.num_sentences
+        num_sentences = 30
         return 1.0430 * math.sqrt(30 * num_complex_words / num_sentences) + 3.1291
 
     def _grade_level(self, score):
@@ -48,5 +47,4 @@ class Smog:
         last_10_sents = sentences[-10:]
 
         smog_text = ' '.join(first_10_sents + mid_10_sents + last_10_sents)
-
         return Analyzer().analyze(smog_text)
