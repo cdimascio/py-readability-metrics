@@ -32,7 +32,7 @@ class Readability:
         """Calculate Gunning Fog score."""
         return GunningFog(self._statistics).score()
 
-    def linear_write(self):
+    def linsear_write(self):
         """Calculate Linear Write."""
         return LinearWrite(self._statistics).score()
 
