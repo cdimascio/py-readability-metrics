@@ -47,7 +47,7 @@ r.smog()
 
 ## Readability Metric Details and Properties
 
-All metrics provide a `score` attribute. See details below to capture additional detail per metric.
+All metrics provide a `score` attribute. Indvidual metrics provide additional properties to increased interpretability. See details below to capture per metric details.
 
 _Note:_ In all examples below `r` is:
 
