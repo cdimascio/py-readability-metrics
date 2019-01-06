@@ -16,7 +16,7 @@ python -m unittest discover -v
 ## Docs
 
 1. Fork the repo
-2. Navigate to `docs/sources`
+2. Navigate to `docs`
 3. Make a change
 4. Rebuild docs
 
