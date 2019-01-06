@@ -13,11 +13,23 @@ python -m unittest discover -v
 
 5. Submit a PR
 
+## Docs
+
+1. Fork the repo
+2. Navigate to `docs/sources`
+3. Make a change
+4. Rebuild docs
+
+   ```shell
+   make html
+   open build/html/index.html # open index.html for review in browser
+   ```
+
 ## Packaging
 
 Contributors should ignore the steps below.
 
 ```shell
-rm -rf build dist py_readability_metrics.egg-info && python setup.py sdist bdist_wheel 
+rm -rf build dist py_readability_metrics.egg-info && python setup.py sdist bdist_wheel
 twine upload dist/*
 ```
