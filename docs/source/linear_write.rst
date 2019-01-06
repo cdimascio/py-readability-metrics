@@ -11,7 +11,7 @@ Usage
 .. code-block:: python
 
     r = Readability(text)
-    lw = r.linear_write()
+    lw = r.linsear_write()
 
     print(lw.score)
     print(lw.grade_level)

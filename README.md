@@ -2,7 +2,7 @@
 
 ![Travis Build](https://travis-ci.org/cdimascio/py-readability-metrics.svg?branch=master) ![Python](https://img.shields.io/badge/python-%203.4%20%7C%203.5%20%7C%203.6-blue.svg) [![MIT license](https://img.shields.io/badge/License-MIT-green.svg)](https://lbesson.mit-license.org/)
 
-Score the _readability_ of text using popular readability metrics including: [Flesch Kincaid Grade Level](#flesch-kincaid-grade-level), [Flesch Reading Ease](#flesch-reading-ease), [Gunning Fog Index](#gunning-fog), [Dale Chall Readability](#dale-chall-readability), [Automated Readability Index (ARI)](#automated-readability-index-ari), [Coleman Liau Index](#coleman-liau-index), [Linear Write](#linear-write), and [SMOG](#smog)
+Score the _readability_ of text using popular readability metrics including: [Flesch Kincaid Grade Level](#flesch-kincaid-grade-level), [Flesch Reading Ease](#flesch-reading-ease), [Gunning Fog Index](#gunning-fog), [Dale Chall Readability](#dale-chall-readability), [Automated Readability Index (ARI)](#automated-readability-index-ari), [Coleman Liau Index](#coleman-liau-index), [Linsear Write](#linsear-write), and [SMOG](#smog)
 
 <p align="center">
  <img src="https://raw.githubusercontent.com/cdimascio/py-readability-metrics/master/assets/py-readability-metrics.png" width="500"></>
@@ -28,7 +28,7 @@ r.gunning_fog()
 r.coleman_liau()
 r.dale_chall()
 r.ari()
-r.linear_write()
+r.linsear_write()
 r.smog()
 ```
 
@@ -43,7 +43,7 @@ r.smog()
 - [Coleman Liau Index](#coleman-liau-index)
 - [Gunning Fog](#gunning-fog)
 - [SMOG](#smog)
-- [Linear Write](#linear-write)
+- [Linsear Write](#linsear-write)
 
 ## Readability Metric Details and Properties
 
@@ -183,20 +183,20 @@ print(s.score)
 print(s.grade_level)
 ```
 
-### Linear Write
+### Linsear Write
 
 Linsear Write is a readability metric for English text, purportedly developed for the United States Air Force to help them calculate the readability of their technical manuals.
 
 **_call:_**
 
 ```python
-r.linear_write()
+r.linsear_write()
 ```
 
 **_example:_**
 
 ```python
-lw = r.linear_write()
+lw = r.linsear_write()
 print(lw.score)
 print(lw.grade_level)
 ```

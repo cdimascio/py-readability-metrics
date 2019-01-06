@@ -11,7 +11,7 @@ class Result:
             format(self.score, self.grade_level)
 
 
-class LinearWrite:
+class LinsearWrite:
     def __init__(self, stats):
         self._stats = stats
         if stats.num_words < 100:

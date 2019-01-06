@@ -1,6 +1,6 @@
 from .text import Analyzer
 from .scorers import ARI, ColemanLiau, DaleChall, Flesch, \
-    FleschKincaid, GunningFog, LinearWrite, Smog
+    FleschKincaid, GunningFog, LinsearWrite, Smog
 
 
 class Readability:
@@ -25,7 +25,7 @@ class Readability:
         return Flesch(self._statistics).score()
 
     def flesch_kincaid(self):
-        """Calculate Flesch Kincaid Grade Level."""
+        """Calculate Flesch-Kincaid Grade Level."""
         return FleschKincaid(self._statistics).score()
 
     def gunning_fog(self):
@@ -33,8 +33,8 @@ class Readability:
         return GunningFog(self._statistics).score()
 
     def linsear_write(self):
-        """Calculate Linear Write."""
-        return LinearWrite(self._statistics).score()
+        """Calculate Linsear Write."""
+        return LinsearWrite(self._statistics).score()
 
     def smog(self):
         """SMOG Index."""
