@@ -2,6 +2,8 @@
 
 ## How To
 
+### Code
+
 1. Fork the repo
 2. Make a change
 3. Create and/or update tests
@@ -13,7 +15,7 @@ python -m unittest discover -v
 
 5. Submit a PR
 
-## Docs
+### Docs
 
 1. Fork the repo
 2. Navigate to `docs`
@@ -25,7 +27,7 @@ python -m unittest discover -v
    open build/html/index.html # open index.html for review in browser
    ```
 
-## Packaging
+## Package
 
 Contributors should ignore the steps below.
 
