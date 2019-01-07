@@ -1,10 +1,9 @@
-py-readability-metrics
-======================
+# py-readability-metrics
 
-![Travis Build](https://travis-ci.org/cdimascio/py-readability-metrics.svg?branch=master) ![Python](https://img.shields.io/badge/python-%203.4%20%7C%203.5%20%7C%203.6-blue.svg) 
-.. image:: https://readthedocs.org/projects/py-readability-metrics/badge/?version=latest
-    :target: https://py-readability-metrics.readthedocs.io/en/latest/?badge=latest
-    :alt: Documentation Status [![MIT license](https://img.shields.io/badge/License-MIT-green.svg)](https://lbesson.mit-license.org/)
+[![MIT license](https://img.shields.io/badge/License-MIT-green.svg)](https://lbesson.mit-license.org/) ![Python](https://img.shields.io/badge/python-%203.4%20%7C%203.5%20%7C%203.6-blue.svg)
+.. image:: https://img.shields.io/badge/wheel-yes-ff00c9.svg
+    :target: https://pypi.org/project/py-readability-metrics/
+    :alt: wheel 
 
 Score the _readability_ of text using popular readability metrics including: [Flesch Kincaid Grade Level](#flesch-kincaid-grade-level), [Flesch Reading Ease](#flesch-reading-ease), [Gunning Fog Index](#gunning-fog), [Dale Chall Readability](#dale-chall-readability), [Automated Readability Index (ARI)](#automated-readability-index-ari), [Coleman Liau Index](#coleman-liau-index), [Lisnear Write](#linsear-write), and [SMOG](#smog)
 
@@ -41,18 +40,17 @@ Here is soe text explaining some complicated stuff
 ## Readability Metrics
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+:maxdepth: 2
+:caption: Contents:
 
-   flesch
-   flesch_kincaid
-   dale_chall
-   ari
-   coleman_liau
-   gunning_fog
-   smog
-   linsear_write
-
+flesch
+flesch_kincaid
+dale_chall
+ari
+coleman_liau
+gunning_fog
+smog
+linsear_write
 
 # Indices and tables
 
