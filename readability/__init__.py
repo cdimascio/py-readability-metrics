@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Calculate gunning fog readability score
+Score text readability with metrics including: Flesch-Kincaid Grade Level, Gunning Fog, ARI, Dale Chall, SMOG, and more
 """
 __title__ = 'py-readabilitiy-metrics'
 __version__ = '1.3.5'
