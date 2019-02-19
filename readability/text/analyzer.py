@@ -3,7 +3,6 @@ import re
 from .syllables import count as count_syllables
 from nltk.tokenize import sent_tokenize, TweetTokenizer
 from nltk.stem.porter import PorterStemmer
-# from nltk.tag import pos_tag
 
 
 class AnalyzerStatistics:
