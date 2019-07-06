@@ -5,6 +5,9 @@
 
 Score the _readability_ of text using popular readability metrics including: [Flesch Kincaid Grade Level](#flesch-kincaid-grade-level), [Flesch Reading Ease](#flesch-reading-ease), [Gunning Fog Index](#gunning-fog), [Dale Chall Readability](#dale-chall-readability), [Automated Readability Index (ARI)](#automated-readability-index-ari), [Coleman Liau Index](#coleman-liau-index), [Linsear Write](#linsear-write), and [SMOG](#smog).
 
+[![GitHub stars](https://img.shields.io/github/stars/cdimascio/py-readability-metrics.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/cdimascio/py-readability-metrics/stargazers/) [![Twitter URL](https://img.shields.io/twitter/url/https/github.com/cdimascio/py-readability-metrics.svg?style=social)](https://twitter.com/intent/tweet?text=Check%20out%20py-readability-metrics%20by%20%40CarmineDiMascio%20https%3A%2F%2Fgithub.com%2Fcdimascio%2Fpy-readability-metrics%20%F0%9F%91%8D)
+
+
 <p align="center">
  <img src="https://raw.githubusercontent.com/cdimascio/py-readability-metrics/master/assets/py-readability-metrics.png" width="500"></>
 </p>
