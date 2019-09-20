@@ -20,7 +20,7 @@ Score the _readability_ of text using popular readability metrics including: [Fl
 
 ## Usage
 
-Here is soe text explaining some complicated stuff
+Here is some text explaining some complicated stuff
 
 .. code-block:: python
 
