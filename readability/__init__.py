@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Score text readability with metrics including: Flesch-Kincaid Grade Level, Gunning Fog, ARI, Dale Chall, SMOG, and more
+Scores the readability of a text and output a variety of metrics including: Flesch-Kincaid Grade Level, Gunning Fog, ARI, Dale Chall, SMOG, and more
 """
 __title__ = 'py-readabilitiy-metrics'
 __version__ = '1.3.5'
