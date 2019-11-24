@@ -1,6 +1,10 @@
 # 🚧 Contributing
 
+[![](https://img.shields.io/gitter/room/cdimascio-oss/community?color=%23eb205a)](https://gitter.im/cdimascio-oss/community)
+
 ## How To
+
+Need help? Reach out on [gitter](https://gitter.im/cdimascio-oss/community)
 
 ### Code
 
