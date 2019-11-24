@@ -15,6 +15,15 @@ python -m unittest discover -v
 
 5. Submit a PR
 
+### Tips: Implmementing a new scorer
+
+All scorers follow a very similar implementation pattern: 
+_The following use [ARI](https://github.com/cdimascio/py-readability-metrics/blob/master/readability/scorers/ari.py) as an example_
+- each scorer lives in the [scorers](https://github.com/cdimascio/py-readability-metrics/blob/master/readability/scorers) directory  
+- each scorer has a [constructor](https://github.com/cdimascio/py-readability-metrics/blob/master/readability/scorers/ari.py#L17) that takes `statistics` and is registered [here](https://github.com/cdimascio/py-readability-metrics/blob/master/readability/readability.py#L11). 
+- each scorer implements a method `score` and returns a `Result`. See [ARI](https://github.com/cdimascio/py-readability-metrics/blob/master/readability/scorers/ari.py#L16) for an example
+- each scorer provides a test(s) in [test/test_readability](https://github.com/cdimascio/py-readability-metrics/blob/master/test/test_readability.py#L13)
+
 ### Docs
 
 1. Fork the repo
