@@ -36,6 +36,7 @@ Here is some text explaining some complicated stuff
     r.ari()
     r.linsear_write()
     r.smog()
+    r.spache()
 
 ## Readability Metrics
 
@@ -50,6 +51,7 @@ Here is some text explaining some complicated stuff
     coleman_liau
     gunning_fog
     smog
+    spache
     linsear_write
 
 # Indices and tables
