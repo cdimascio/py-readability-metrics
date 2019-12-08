@@ -34,6 +34,7 @@ r.dale_chall()
 r.ari()
 r.linsear_write()
 r.smog()
+r.spache()
 ```
 
 **\*Note:** `text` must contain >= 100 words\*
@@ -47,6 +48,7 @@ r.smog()
 - [Coleman Liau Index](#coleman-liau-index)
 - [Gunning Fog](#gunning-fog)
 - [SMOG](#smog)
+- [Spache](#spache)
 - [Linsear Write](#linsear-write)
 
 ## Readability Metric Details and Properties
@@ -183,6 +185,22 @@ r.smog()
 
 ```python
 s = r.smog()
+print(s.score)
+print(s.grade_level)
+```
+
+The Spache Readability Formula is used for Primary-Grade Reading Materials, published in 1953 in The Elementary School Journal. The Spache Formula is best used to calculate the difficulty of text that falls at the 3rd grade level or below. 
+
+**_call:_**
+
+```python
+r.spache()
+```
+
+**_example:_**
+
+```python
+s = r.spache()
 print(s.score)
 print(s.grade_level)
 ```

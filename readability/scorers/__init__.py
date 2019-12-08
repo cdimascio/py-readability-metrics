@@ -7,3 +7,4 @@ from .dale_chall import DaleChall
 from .ari import ARI
 from .linsear_write import LinsearWrite
 from .smog import Smog
+from .spache import Spache

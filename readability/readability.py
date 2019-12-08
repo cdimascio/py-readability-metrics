@@ -1,6 +1,6 @@
 from .text import Analyzer
 from .scorers import ARI, ColemanLiau, DaleChall, Flesch, \
-    FleschKincaid, GunningFog, LinsearWrite, Smog
+    FleschKincaid, GunningFog, LinsearWrite, Smog, Spache
 
 
 class Readability:
@@ -39,6 +39,10 @@ class Readability:
     def smog(self):
         """SMOG Index."""
         return Smog(self._statistics, self._analyzer.sentences).score()
+
+    def spache(self):
+        """Spache Index."""
+        return Spache(self._statistics).score()
 
     def statistics(self):
         return {

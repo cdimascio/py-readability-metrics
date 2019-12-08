@@ -38,6 +38,10 @@ class AnalyzerStatistics:
         return self.stats['num_dale_chall_complex']
 
     @property
+    def num_spache_complex(self):
+        return self.stats['num_spache_complex']
+
+    @property
     def avg_words_per_sentence(self):
         return self.num_words / self.num_sentences
 
@@ -57,6 +61,7 @@ class Analyzer:
 
     def analyze(self, text):
         self._dale_chall_set = self._load_dale_chall()
+        self._spache_set = self._load_spache()
         stats = self._statistics(text)
         self.sentences = stats['sentences']  # hack for smog
         return AnalyzerStatistics(stats)
@@ -80,6 +85,7 @@ class Analyzer:
         letters_count = 0
         gunning_complex_count = 0
         dale_chall_complex_count = 0
+        spache_complex_count = 0
         porter_stemmer = PorterStemmer()
 
         def is_gunning_complex(t, syllable_count):
@@ -90,6 +96,10 @@ class Analyzer:
         def is_dale_chall_complex(t):
             stem = porter_stemmer.stem(t.lower())
             return stem not in self._dale_chall_set
+
+        def is_spache_complex(t):
+            stem = porter_stemmer.stem(t.lower())
+            return stem not in self._spache_set
 
         for t in tokens:
 
@@ -104,6 +114,8 @@ class Analyzer:
                     else 0
                 dale_chall_complex_count += \
                     1 if is_dale_chall_complex(t) else 0
+                spache_complex_count += \
+                    1 if is_spache_complex(t) else 0
 
         sentences = self._tokenize_sentences(text)
         sentence_count = len(sentences)
@@ -116,6 +128,7 @@ class Analyzer:
             'num_letters': letters_count,
             'num_gunning_complex': gunning_complex_count,
             'num_dale_chall_complex': dale_chall_complex_count,
+            'num_spache_complex': spache_complex_count,
             'sentences': sentences,
         }
 
@@ -132,4 +145,11 @@ class Analyzer:
         cur_path = os.path.dirname(os.path.realpath(__file__))
         dale_chall_path = os.path.join(cur_path, '..', 'data', file)
         with open(dale_chall_path) as f:
+            return set(line.strip() for line in f)
+
+    def _load_spache(self):
+        file = 'spache_easy_porterstem.txt'
+        cur_path = os.path.dirname(os.path.realpath(__file__))
+        spache_path = os.path.join(cur_path, '..', 'data', file)
+        with open(spache_path) as f:
             return set(line.strip() for line in f)

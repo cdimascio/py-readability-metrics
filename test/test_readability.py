@@ -68,6 +68,12 @@ class ReadabilityTest(unittest.TestCase):
         self.assertEqual(12.516099999999998, r.score)
         self.assertEqual('13', r.grade_level)
 
+    def test_spache(self):
+        r = self.readability.spache()
+        print(r)
+        self.assertEqual(7.164945054945054, r.score)
+        self.assertEqual('7', r.grade_level)
+
     def test_print_stats(self):
         stats = self.readability.statistics()
         self.assertEqual(562, stats['num_letters'])

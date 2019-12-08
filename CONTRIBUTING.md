@@ -7,6 +7,14 @@
 
 Need help? Reach out on [gitter](https://gitter.im/cdimascio-oss/community)
 
+### Prequisites
+
+1. Install deps
+```
+pip install .
+python -m nltk.downloader punkt
+```
+
 ### Code
 
 1. Fork the repo
