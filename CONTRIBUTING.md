@@ -58,6 +58,13 @@ Modify Documentation
    open build/html/index.html # open index.html for review in browser
    ```
 
+## Publish docs
+
+Contributors should ignore the steps below.
+
+1. Login to https://readthedocs.org/
+2. Run build
+
 ## Package
 
 Contributors should ignore the steps below.
