@@ -39,6 +39,15 @@ _The following use [ARI](https://github.com/cdimascio/py-readability-metrics/blo
 
 ### Docs
 
+Prequisites:
+1. Install Sphinx
+
+```shell
+pip install -U sphinx m2r
+```
+
+Modify Documentation
+
 1. Fork the repo
 2. Navigate to `docs`
 3. Make a change
@@ -52,6 +61,14 @@ _The following use [ARI](https://github.com/cdimascio/py-readability-metrics/blo
 ## Package
 
 Contributors should ignore the steps below.
+
+Prerequisites:
+
+```shell
+pip install twine
+```
+
+publish 
 
 ```shell
 rm -rf build dist py_readability_metrics.egg-info && python setup.py sdist bdist_wheel
