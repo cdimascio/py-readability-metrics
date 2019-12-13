@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='py-readability-metrics',
-    version='1.4.1',
+    version='1.4.2',
     author='Carmine DiMAscio',
     author_email='cdimascio@gmail.com',
     description='Score text "Readability" with popular metrics such as Flesch-Kincaid, Gunning Fog, ARI, Dale Chall, SMOG, and more',
@@ -16,7 +16,7 @@ setup(
     url='https://github.com/cdimascio/py-readability-metrics',
     keywords="readability metrics text difficulty grade level",
     packages=find_packages(exclude=['tests']),
-    package_data={'readability': ['data', 'data/dale_chall_porterstem.txt']},
+    package_data={'readability': ['data', 'data/dale_chall_porterstem.txt', 'data/spache_easy_porterstem.txt']},
     include_package_data=True,
     license='MIT',
     install_requires=[
