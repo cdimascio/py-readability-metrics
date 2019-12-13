@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='py-readability-metrics',
-    version='1.4.2',
+    version='1.4.3',
     author='Carmine DiMAscio',
     author_email='cdimascio@gmail.com',
     description='Score text "Readability" with popular metrics such as Flesch-Kincaid, Gunning Fog, ARI, Dale Chall, SMOG, and more',
