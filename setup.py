@@ -10,7 +10,7 @@ setup(
     version='1.4.3',
     author='Carmine DiMAscio',
     author_email='cdimascio@gmail.com',
-    description='Score text "Readability" with popular metrics such as Flesch-Kincaid, Gunning Fog, ARI, Dale Chall, SMOG, and more',
+    description='Score text "Readability" with popular formulas and metrics including Flesch-Kincaid, Gunning Fog, ARI, Dale Chall, SMOG, Spache and more',
     long_description=long_description,
     long_description_content_type="text/markdown",
     url='https://github.com/cdimascio/py-readability-metrics',
