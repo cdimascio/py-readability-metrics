@@ -1,4 +1,4 @@
-# py-readability-metrics
+# 📗 py-readability-metrics
 
 ![Travis Build](https://travis-ci.org/cdimascio/py-readability-metrics.svg?branch=master) ![Python](https://img.shields.io/badge/python-3.x-blue.svg) [![Documentation Status](https://readthedocs.org/projects/py-readability-metrics/badge/?version=latest)](https://py-readability-metrics.readthedocs.io/en/latest/?badge=latest) [![wheel](https://img.shields.io/badge/wheel-yes-ff00c9.svg)](https://pypi.org/project/py-readability-metrics/) [![](https://img.shields.io/gitter/room/cdimascio-oss/community?color=%23eb205a)](https://gitter.im/cdimascio-oss/community)
  [![MIT license](https://img.shields.io/badge/License-MIT-green.svg)](https://lbesson.mit-license.org/)
