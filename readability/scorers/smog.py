@@ -14,14 +14,22 @@ class Result:
 
 
 class Smog:
-    def __init__(self, stats, sentences):
+    def __init__(self, stats, sentences, all_sentences=False):
+        """
+        Computes the SMOG readability score (Harry McLaughlin, 1969 https://ogg.osu.edu/media/documents/health_lit/WRRSMOG_Readability_Formula_G._Harry_McLaughlin__1969_.pdf)
+        If all_sentences is false, computes the score as described in McLaughlin, 1969, using exactly 30 sentences
+        If all_sentences is true, adjusts the score to use all sentences in the text
+        """
         if stats.num_sentences < 30:
             raise ReadabilityException(
                 'SMOG requires 30 sentences. {} found'
                 .format(stats.num_sentences))
 
         self._stats = stats
-        self._smog_stats = self._smog_text_stats(sentences)
+        self.all_sentences = all_sentences
+        if not self.all_sentences:
+            self._smog_stats = self._smog_text_stats(sentences)
+            
 
     def score(self):
         score = self._score()
@@ -32,9 +40,14 @@ class Smog:
         )
 
     def _score(self):
-        smog_stats = self._smog_stats
+        if self.all_sentences:
+            smog_stats = self._stats
+            num_sentences = smog_stats.num_sentences
+        else:
+            smog_stats = self._smog_stats
+            num_sentences = 30
+        
         num_complex_words = smog_stats.num_poly_syllable_words
-        num_sentences = 30
         return 1.0430 * math.sqrt(30 * num_complex_words / num_sentences) + 3.1291
 
     def _grade_level(self, score):
