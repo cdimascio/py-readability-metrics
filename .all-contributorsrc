@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "rbamos",
+      "name": "rbamos",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/49767442?v=4",
+      "profile": "https://github.com/rbamos",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "py-readability-metrics",
+  "projectOwner": "cdimascio",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
