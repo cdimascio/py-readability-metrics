@@ -1,4 +1,7 @@
 # 📗 py-readability-metrics
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![Travis Build](https://travis-ci.org/cdimascio/py-readability-metrics.svg?branch=master) ![Python](https://img.shields.io/badge/python-3.x-blue.svg) [![Documentation Status](https://readthedocs.org/projects/py-readability-metrics/badge/?version=latest)](https://py-readability-metrics.readthedocs.io/en/latest/?badge=latest) [![wheel](https://img.shields.io/badge/wheel-yes-ff00c9.svg)](https://pypi.org/project/py-readability-metrics/) [![](https://img.shields.io/gitter/room/cdimascio-oss/community?color=%23eb205a)](https://gitter.im/cdimascio-oss/community)
  [![MIT license](https://img.shields.io/badge/License-MIT-green.svg)](https://lbesson.mit-license.org/)
@@ -238,3 +241,22 @@ Contributions are welcome!
 [MIT](LICENSE)
 
 <a href="https://www.buymeacoffee.com/m97tA5c" target="_blank"><img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/rbamos"><img src="https://avatars1.githubusercontent.com/u/49767442?v=4" width="100px;" alt=""/><br /><sub><b>rbamos</b></sub></a><br /><a href="https://github.com/cdimascio/py-readability-metrics/commits?author=rbamos" title="Code">💻</a> <a href="https://github.com/cdimascio/py-readability-metrics/commits?author=rbamos" title="Tests">⚠️</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
