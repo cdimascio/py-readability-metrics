@@ -36,9 +36,10 @@ class Readability:
         """Calculate Linsear Write."""
         return LinsearWrite(self._statistics).score()
 
-    def smog(self):
-        """SMOG Index."""
-        return Smog(self._statistics, self._analyzer.sentences).score()
+    def smog(self,all_sentences=False):
+        """SMOG Index.
+        `all_sentences` indicates whether SMOG should use a sample of 30 sentences, as described in the original paper, or if it should use all sentences in the text"""
+        return Smog(self._statistics, self._analyzer.sentences,all_sentences=all_sentences).score()
 
     def spache(self):
         """Spache Index."""

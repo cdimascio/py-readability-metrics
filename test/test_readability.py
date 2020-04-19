@@ -62,11 +62,21 @@ class ReadabilityTest(unittest.TestCase):
         text = ' '.join(text for i in range(0, 5))
 
         readability = Readability(text)
-        r = readability.smog()
 
-        print(r)
-        self.assertEqual(12.516099999999998, r.score)
-        self.assertEqual('13', r.grade_level)
+        #Test SMOG with 30 sentences
+        r1 = readability.smog()
+        
+        #Test SMOG with all sentences
+        r2 = readability.smog(all_sentences=True)
+
+
+        print("all_sentences=False: %s ; all_sentences=True: %s" % (r1,r2))
+        self.assertEqual(12.516099999999998, r1.score)
+        self.assertEqual('13', r1.grade_level)
+
+        self.assertEqual(12.785403640627713, r2.score)
+        self.assertEqual('13', r2.grade_level)
+
 
     def test_spache(self):
         r = self.readability.spache()
