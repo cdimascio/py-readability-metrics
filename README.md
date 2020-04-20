@@ -188,6 +188,22 @@ print(s.score)
 print(s.grade_level)
 ```
 
+The original SMOG formula uses a sample of 30 sentences from the original text. However, the formula can be generalized to any number of sentences. You can use the generalized formula by passing the `all_sentences=True` argument to `smog()`
+
+**_call:_**
+
+```python
+r.smog(all_sentences=True)
+```
+
+**_example:_**
+
+```python
+s = r.smog(all_sentences=True)
+print(s.score)
+print(s.grade_level)
+```
+
 ### SPACHE
 
 The Spache Readability Formula is used for Primary-Grade Reading Materials, published in 1953 in The Elementary School Journal. The Spache Formula is best used to calculate the difficulty of text that falls at the 3rd grade level or below. 
