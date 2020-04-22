@@ -66,17 +66,6 @@ class Analyzer:
         self.sentences = stats['sentences']  # hack for smog
         return AnalyzerStatistics(stats)
 
-    def _tokenize_sentences(self, text):
-        return sent_tokenize(text)
-
-    def _tokenize(self, text):
-        tokenizer = TweetTokenizer()
-        return tokenizer.tokenize(text)
-
-    def _is_punctuation(self, token):
-        match = re.match('^[.,\/#!$%\'\^&\*;:{}=\-_`~()]$', token)
-        return match is not None
-
     def _statistics(self, text):
         tokens = self._tokenize(text)
         syllable_count = 0
@@ -131,6 +120,17 @@ class Analyzer:
             'num_spache_complex': spache_complex_count,
             'sentences': sentences,
         }
+
+    def _tokenize_sentences(self, text):
+        return sent_tokenize(text)
+
+    def _tokenize(self, text):
+        tokenizer = TweetTokenizer()
+        return tokenizer.tokenize(text)
+
+    def _is_punctuation(self, token):
+        match = re.match('^[.,\/#!$%\'\^&\*;:{}=\-_`~()]$', token)
+        return match is not None
 
     def _is_proper_noun(self, token):
         # pos = pos_tag(token)[0][1]
