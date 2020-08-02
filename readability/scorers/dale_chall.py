@@ -30,7 +30,7 @@ class DaleChall:
             stats.num_dale_chall_complex / stats.num_words * 100
         raw_score = 0.1579 * percent_difficult_words + 0.0496 * words_per_sent
         adjusted_score = raw_score + 3.6365 \
-            if percent_difficult_words > .05 \
+            if percent_difficult_words > 5 \
             else raw_score
         return adjusted_score
 
