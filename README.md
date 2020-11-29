@@ -110,7 +110,7 @@ r.dale_chall()
 **_example:_**
 
 ```python
-dc = dale_chall()
+dc = r.dale_chall()
 print(dc.score)
 print(dc.grade_levels)
 ```
