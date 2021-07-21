@@ -1,5 +1,4 @@
-from readability.exceptions import ReadabilityException
-
+from readability.exceptions import ReadabilityException, minimum_words_warning
 
 class Result:
     def __init__(self, score, grade_level):
@@ -15,7 +14,7 @@ class FleschKincaid:
     def __init__(self, stats):
         self._stats = stats
         if stats.num_words < 100:
-            raise ReadabilityException('100 words required.')
+            minimum_words_warning()
 
     def score(self):
         score = self._score()
