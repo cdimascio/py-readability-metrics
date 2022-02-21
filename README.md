@@ -240,6 +240,17 @@ print(lw.score)
 print(lw.grade_level)
 ```
 
+## What makes a word
+
+Bear in mind that there is no consensus as to what is (not) a word. The default word tokenizer keeps clitics as one word
+(e.g. `we've`) and splits abbreviations (e.g. `['U', '.', 'S', '.']`). To change this behavior you can pass your own 
+tokenizer.  
+**_example:_**
+```python
+from nltk import word_tokenize
+r = Readability(text, f_tokenize_words=word_tokenize)
+```
+
 ## [Contributing](CONTRIBUTING.md)
 
 Contributions are welcome!
