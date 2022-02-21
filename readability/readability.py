@@ -4,8 +4,15 @@ from .scorers import ARI, ColemanLiau, DaleChall, Flesch, \
 
 
 class Readability:
-    def __init__(self, text):
-        self._analyzer = Analyzer()
+    def __init__(self, text, f_tokenize_words=None):
+        """
+        :param text: str
+            Input text. Consider cleaning your text before calculating readability metrics
+        :param f_tokenize_words: callable, default=None
+            Override default tokenization of words;
+            Example: lambda txt: NltkTokenizer('english').word_tokenize(txt)
+        """
+        self._analyzer = Analyzer(f_tokenize_words)
         self._statistics = self._analyzer.analyze(text)
 
     def ari(self):

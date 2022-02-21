@@ -56,7 +56,13 @@ class AnalyzerStatistics:
 
 
 class Analyzer:
-    def __init__(self):
+    def __init__(self, f_tokenize_words=None):
+        """
+        :param f_tokenize_words: callable, default=None
+            Override default tokenization of words;
+            Example: lambda txt: NltkTokenizer('english').word_tokenize(txt)
+        """
+        self.f_tokenize_words = f_tokenize_words
         pass
 
     def analyze(self, text):
@@ -125,6 +131,9 @@ class Analyzer:
         return sent_tokenize(text)
 
     def _tokenize(self, text):
+        if self.f_tokenize_words:
+            return self.f_tokenize_words(text)
+
         tokenizer = TweetTokenizer()
         return tokenizer.tokenize(text)
 
