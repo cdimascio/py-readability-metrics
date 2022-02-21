@@ -26,14 +26,12 @@ class WordTokenizeTest(unittest.TestCase):
 
     def test_nltk_treebank_tokenizer(self):
         r = Readability(self.text, f_tokenize_words=word_tokenize).ari()
-        print(r)
         self.assertEqual(8.730483870967742, r.score)
         self.assertEqual(['9'], r.grade_levels)
         self.assertEqual([14, 15], r.ages)
 
     def test_default_tokenizer(self):
         r = Readability(self.text).ari()
-        print(r)
         self.assertEqual(8.578548387096774, r.score)
         self.assertEqual(['9'], r.grade_levels)
         self.assertEqual([14, 15], r.ages)
