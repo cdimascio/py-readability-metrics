@@ -36,6 +36,16 @@ class ReadabilityTest(unittest.TestCase):
         self.assertEqual(['10', '11', '12'], r.grade_levels)
         self.assertEqual('fairly_difficult', r.ease)
 
+    def test_lix(self):
+    	text = """Läsbarhetsindex (LIX) kan användas för att få uppfattning om hur lätt eller svår en text är att läsa. LIX är baserat på medeltalet ord per mening och andelen långa ord (ord med fler än 6 bokstäver) uttryckt i procent. Det finns flera olika läsbarhetsindex, men i 		Sverige är LIX det mest använda. LIX utvecklades på 1960-talet av pedagogikforskaren Carl-Hugo Björnsson. 
+	Läsbarhetsindex (LIX) kan användas för att få uppfattning om hur lätt eller svår en text är att läsa. LIX är baserat på medeltalet ord per mening och andelen långa ord (ord med fler än 6 bokstäver) uttryckt i procent. Det finns flera olika läsbarhetsindex, men i Sverige är LIX det mest använda. LIX utvecklades på 1960-talet av pedagogikforskaren Carl-Hugo Björnsson. 
+    	"""
+    	readability = Readability(text)
+    	r = readability.lix()
+    	print(r)
+    	self.assertEqual(41.47950819672131, r.score)
+    	self.assertEqual('medium difficulty', r.ease)
+
     def test_flesch_kincaid(self):
         r = self.readability.flesch_kincaid()
         print(r)
@@ -90,3 +100,7 @@ class ReadabilityTest(unittest.TestCase):
         self.assertEqual(117, stats['num_words'])
         self.assertEqual(7, stats['num_sentences'])
         self.assertEqual(20, stats['num_polysyllabic_words'])
+        
+        
+
+    	
