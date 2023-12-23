@@ -12,9 +12,9 @@ class Result:
 
 
 class LinsearWrite:
-    def __init__(self, stats):
+    def __init__(self, stats, length_exception=True):
         self._stats = stats
-        if stats.num_words < 100:
+        if length_exception and stats.num_words < 100:
             raise ReadabilityException('100 words required.')
 
     def score(self):
