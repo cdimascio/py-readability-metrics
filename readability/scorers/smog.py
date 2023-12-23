@@ -14,14 +14,14 @@ class Result:
 
 
 class Smog:
-    def __init__(self, stats, sentences, all_sentences=False, length_exception=True):
+    def __init__(self, stats, sentences, all_sentences=False, ignore_length=False):
         """
         Computes the SMOG readability score (Harry McLaughlin, 1969 https://ogg.osu.edu/media/documents/health_lit/WRRSMOG_Readability_Formula_G._Harry_McLaughlin__1969_.pdf)
         If all_sentences is false, computes the score as described in McLaughlin, 1969, using exactly 30 sentences
         If all_sentences is true, adjusts the score to use all sentences in the text
         """
         if stats.num_sentences < 30:
-            if length_exception:
+            if not ignore_length:
                 raise ReadabilityException(
                     'SMOG requires 30 sentences. {} found'
                     .format(stats.num_sentences))
