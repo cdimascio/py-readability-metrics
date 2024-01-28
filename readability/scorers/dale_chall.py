@@ -1,29 +1,12 @@
-from readability.exceptions import ReadabilityException
+from readability.scorers.base_scorer import ReadabilityScorer
 
 
-class Result:
-    def __init__(self, score, grade_levels):
-        self.score = score
-        self.grade_levels = grade_levels
-
-    def __str__(self):
-        return "score: {}, grade_levels: {}". \
-            format(self.score, self.grade_levels)
-
-
-class DaleChall:
+class DaleChall(ReadabilityScorer):
     def __init__(self, stats, min_words=100):
-        self._stats = stats
-        if stats.num_words < min_words:
-            raise ReadabilityException('{} words required.'.format(min_words))
+        super().__init__(stats, min_words)
+        self.scorer_name = "Dale-Chall"
 
-    def score(self):
-        score = self._score()
-        return Result(
-            score=score,
-            grade_levels=self._grade_levels(score))
-
-    def _score(self):
+    def _raw_score(self):
         stats = self._stats
         words_per_sent = stats.num_words / stats.num_sentences
         percent_difficult_words = \
@@ -34,7 +17,8 @@ class DaleChall:
             else raw_score
         return adjusted_score
 
-    def _grade_levels(self, score):
+    def _grade_level(self):
+        score = self._raw_score()
         if score <= 4.9:
             return ['1', '2', '3', '4']
         elif score >= 5 and score < 6:

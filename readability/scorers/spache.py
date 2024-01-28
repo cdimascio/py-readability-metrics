@@ -1,29 +1,13 @@
-from readability.exceptions import ReadabilityException
+from readability.scorers.base_scorer import ReadabilityScorer
 
 
-class Result:
-    def __init__(self, score, grade_level):
-        self.score = score
-        self.grade_level = grade_level
 
-    def __str__(self):
-        return "score: {}, grade_level: '{}'". \
-            format(self.score, self.grade_level)
-
-
-class Spache:
+class Spache(ReadabilityScorer):
     def __init__(self, stats, min_words=100):
-        self._stats = stats
-        if stats.num_words < min_words:
-            raise ReadabilityException('{} words required.'.format(min_words))
+        super().__init__(stats, min_words)
+        self.scorer_name = "Spache"
 
-    def score(self):
-        score = self._score()
-        return Result(
-            score=score,
-            grade_level=self._grade_level(score))
-
-    def _score(self):
+    def _raw_score(self):
         stats = self._stats
         avg_sentence_len = stats.num_words / stats.num_sentences
         percent_difficult_words = \
@@ -31,5 +15,5 @@ class Spache:
 
         return (0.141 * avg_sentence_len) + (0.086 * percent_difficult_words) + 0.839
 
-    def _grade_level(self, score):
-        return str(round(score))
+    def _grade_level(self):
+        return str(round(self.raw_score))
