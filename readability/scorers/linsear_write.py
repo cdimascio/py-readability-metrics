@@ -16,4 +16,4 @@ class LinsearWrite(ReadabilityScorer):
         return (inter_score - 2) / 2
 
     def _grade_level(self):
-        return str(round(self.raw_score))
+        return str(round(self._score))

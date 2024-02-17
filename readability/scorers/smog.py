@@ -36,7 +36,7 @@ class Smog(ReadabilityScorer):
         return 1.0430 * math.sqrt(30 * num_complex_words / num_sentences) + 3.1291
 
     def _grade_level(self):
-        return str(round(self.raw_score))
+        return str(round(self._score))
 
     def _smog_text_stats(self, sentences):
         mid = int(math.floor(len(sentences) / 2))

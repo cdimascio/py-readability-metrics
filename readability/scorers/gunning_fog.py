@@ -13,7 +13,7 @@ class GunningFog(ReadabilityScorer):
         return 0.4 * (word_per_sent + 100 * poly_syllables_per_word)
 
     def _grade_level(self):
-        rounded = round(self.raw_score)
+        rounded = round(self._score)
         if rounded < 6:
             return 'na'
         elif 6 <= rounded <= 12:

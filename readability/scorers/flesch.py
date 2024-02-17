@@ -13,7 +13,7 @@ class Flesch(ReadabilityScorer):
         return 206.835 - (1.015 * words_per_sent) - (84.6 * syllables_per_word)
 
     def _description(self):
-        score = self.raw_score
+        score = self._score
         if score >= 90 and score <= 100:
             return 'very_easy'
         elif score >= 80 and score < 90:
@@ -30,7 +30,7 @@ class Flesch(ReadabilityScorer):
             return 'very_confusing'
 
     def _grade_level(self):
-        score = self.raw_score
+        score = self._score
         if score >= 90 and score <= 100:
             return ['5']
         elif score >= 80 and score < 90:

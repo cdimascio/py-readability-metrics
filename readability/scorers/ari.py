@@ -15,7 +15,7 @@ class ARI(ReadabilityScorer):
         return 4.71 * letters_per_word + 0.5 * words_per_sent - 21.43
 
     def _grade_level(self):
-        score = math.ceil(self.raw_score)
+        score = math.ceil(self._score)
         if score <= 1:
             return ['K']
         elif score <= 2:
@@ -46,7 +46,7 @@ class ARI(ReadabilityScorer):
             return ['college_graduate']
 
     def _age(self):
-        score = math.ceil(self.raw_score)
+        score = math.ceil(self._score)
         if score <= 1:
             return [5, 6]
         elif score <= 2:

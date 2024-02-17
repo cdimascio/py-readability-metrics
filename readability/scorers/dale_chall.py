@@ -18,7 +18,7 @@ class DaleChall(ReadabilityScorer):
         return adjusted_score
 
     def _grade_level(self):
-        score = self._raw_score()
+        score = self._score
         if score <= 4.9:
             return ['1', '2', '3', '4']
         elif score >= 5 and score < 6:

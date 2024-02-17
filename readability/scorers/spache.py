@@ -16,4 +16,4 @@ class Spache(ReadabilityScorer):
         return (0.141 * avg_sentence_len) + (0.086 * percent_difficult_words) + 0.839
 
     def _grade_level(self):
-        return str(round(self.raw_score))
+        return str(round(self._score))

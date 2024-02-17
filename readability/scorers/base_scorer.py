@@ -1,13 +1,12 @@
-import pandas as pd
 from readability.exceptions import ReadabilityException
 from readability.text import AnalyzerStatistics
 
 
 class Result:
-    def __init__(self, scorer_name, raw_score, grade_level, age, scale_value, cloze_score, description):
+    def __init__(self, scorer_name, score, grade_level, age, scale_value, cloze_score, description):
         self.name = scorer_name
 
-        self.raw_score = raw_score
+        self.score = score
         self.grade_level = grade_level
         self.age = age
         self.scale_value = scale_value
@@ -20,11 +19,11 @@ class Result:
         else:
             result = ""
 
-        if self.raw_score is not None:
-            if type(self.raw_score) == float:
-                result += "raw_score = {:.2f}, ".format(self.raw_score)
+        if self.score is not None:
+            if isinstance(self.score, float):
+                result += "score = {:.2f}, ".format(self.score)
             else:
-                result += "raw_score = {}, ".format(self.raw_score)
+                result += "score = {}, ".format(self.score)
 
         if self.grade_level is not None:
             result += "grade_level = {}, ".format(self.grade_level)
@@ -41,7 +40,7 @@ class Result:
 
 
 class ReadabilityScorer:
-    def __init__(self, stats:AnalyzerStatistics, min_words=100):
+    def __init__(self, stats: AnalyzerStatistics, min_words=100):
         if stats.num_words < min_words:
             raise ReadabilityException('{} words required.'.format(min_words))
 
@@ -49,10 +48,10 @@ class ReadabilityScorer:
         self.scorer_name = None
 
     def results(self):
-        self.raw_score = self._raw_score()
+        self._score = self._raw_score()
         return Result(
             scorer_name=self.scorer_name,
-            raw_score=self.raw_score,
+            score=self._score,
             grade_level=self._grade_level(),
             age=self._age(),
             scale_value=self._scale_value(),

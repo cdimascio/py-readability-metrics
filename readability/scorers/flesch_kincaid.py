@@ -12,4 +12,4 @@ class FleschKincaid(ReadabilityScorer):
                 11.8 * stats.avg_syllables_per_word) - 15.59
 
     def _grade_level(self):
-        return str(round(self.raw_score))
+        return str(round(self._score))

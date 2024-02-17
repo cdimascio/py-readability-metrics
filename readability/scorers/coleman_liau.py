@@ -17,4 +17,4 @@ class ColemanLiau(ReadabilityScorer):
             0.296 * sentences_per_100_words - 15.8
 
     def _grade_level(self):
-        return str(round(self.raw_score))
+        return str(round(self._score))

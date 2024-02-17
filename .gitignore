@@ -3,3 +3,4 @@ __pycache__
 py_readability_metrics.egg-info
 dist
 build
+*.rsp
