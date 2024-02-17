@@ -14,8 +14,8 @@ class ReadabilityTest(unittest.TestCase):
         r = self.readability.ari()
         print(r)
         self.assertEqual(9.551245421245422, r.score)
-        self.assertEqual(['10'], r.grade_levels)
-        self.assertEqual([15, 16], r.ages)
+        self.assertEqual(['10'], r.grade_level)
+        self.assertEqual([15, 16], r.age)
 
     def test_coleman_liau(self):
         r = self.readability.coleman_liau()
@@ -27,14 +27,14 @@ class ReadabilityTest(unittest.TestCase):
         r = self.readability.dale_chall()
         print(r)
         self.assertEqual(9.32399010989011, r.score)
-        self.assertEqual(['college'], r.grade_levels)
+        self.assertEqual(['college'], r.grade_level)
 
     def test_flesch(self):
         r = self.readability.flesch()
         print(r)
         self.assertEqual(51.039230769230784, r.score)
-        self.assertEqual(['10', '11', '12'], r.grade_levels)
-        self.assertEqual('fairly_difficult', r.ease)
+        self.assertEqual(['10', '11', '12'], r.grade_level)
+        self.assertEqual('fairly_difficult', r.description)
 
     def test_flesch_kincaid(self):
         r = self.readability.flesch_kincaid()

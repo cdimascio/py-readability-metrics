@@ -1,37 +1,19 @@
-from readability.exceptions import ReadabilityException
+from readability.scorers.base_scorer import ReadabilityScorer
 
 
-class Result:
-    def __init__(self, score, grade_levels, ease):
-        self.score = score
-        self.ease = ease
-        self.grade_levels = grade_levels
-
-    def __str__(self):
-        return "score: {}, ease: '{}', grade_levels: {}". \
-            format(self.score, self.ease, self.grade_levels)
-
-
-class Flesch:
+class Flesch(ReadabilityScorer):
     def __init__(self, stats, min_words=100):
-        self._stats = stats
-        if stats.num_words < min_words:
-            raise ReadabilityException('{} words required.'.format(min_words))
+        super().__init__(stats, min_words)
+        self.scorer_name = "Flesch"
 
-    def score(self):
-        score = self._score()
-        return Result(
-            score=score,
-            ease=self._ease(score),
-            grade_levels=self._grade_levels(score))
-
-    def _score(self):
+    def _raw_score(self):
         stats = self._stats
         words_per_sent = stats.num_words / stats.num_sentences
         syllables_per_word = stats.num_syllables / stats.num_words
         return 206.835 - (1.015 * words_per_sent) - (84.6 * syllables_per_word)
 
-    def _ease(self, score):
+    def _description(self):
+        score = self._score
         if score >= 90 and score <= 100:
             return 'very_easy'
         elif score >= 80 and score < 90:
@@ -47,7 +29,8 @@ class Flesch:
         else:
             return 'very_confusing'
 
-    def _grade_levels(self, score):
+    def _grade_level(self):
+        score = self._score
         if score >= 90 and score <= 100:
             return ['5']
         elif score >= 80 and score < 90:
