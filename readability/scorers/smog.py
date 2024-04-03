@@ -1,7 +1,7 @@
 import math
 from readability.text.analyzer import Analyzer
 from readability.exceptions import ReadabilityException
-
+import warnings
 
 class Result:
     def __init__(self, score, grade_level):
@@ -14,16 +14,22 @@ class Result:
 
 
 class Smog:
-    def __init__(self, stats, sentences, all_sentences=False):
+    def __init__(self, stats, sentences, all_sentences=False, ignore_length=False):
         """
         Computes the SMOG readability score (Harry McLaughlin, 1969 https://ogg.osu.edu/media/documents/health_lit/WRRSMOG_Readability_Formula_G._Harry_McLaughlin__1969_.pdf)
         If all_sentences is false, computes the score as described in McLaughlin, 1969, using exactly 30 sentences
         If all_sentences is true, adjusts the score to use all sentences in the text
         """
         if stats.num_sentences < 30:
-            raise ReadabilityException(
-                'SMOG requires 30 sentences. {} found'
-                .format(stats.num_sentences))
+            if not ignore_length:
+                raise ReadabilityException(
+                    'SMOG requires 30 sentences. {} found'
+                    .format(stats.num_sentences))
+            else:
+                warnings.warn(
+                    'SMOG requires 30 sentences. {} found'
+                    .format(stats.num_sentences))
+
 
         self._stats = stats
         self.all_sentences = all_sentences

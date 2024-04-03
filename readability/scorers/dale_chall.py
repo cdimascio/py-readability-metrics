@@ -12,10 +12,10 @@ class Result:
 
 
 class DaleChall:
-    def __init__(self, stats):
+    def __init__(self, stats, min_words=100):
         self._stats = stats
-        if stats.num_words < 100:
-            raise ReadabilityException('100 words required.')
+        if stats.num_words < min_words:
+            raise ReadabilityException('{} words required.'.format(min_words))
 
     def score(self):
         score = self._score()
