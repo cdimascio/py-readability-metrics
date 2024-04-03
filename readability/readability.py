@@ -1,7 +1,6 @@
 from .text import Analyzer
 from .scorers import ARI, ColemanLiau, DaleChall, Flesch, \
-    FleschKincaid, GunningFog, LinsearWrite, Smog, Spache
-import warnings
+    FleschKincaid, GunningFog, LinsearWrite, Smog, Spache, Lix
 
 class Readability:
     def __init__(self, text, min_words=100):
@@ -50,11 +49,16 @@ class Readability:
     def spache(self):
         """Spache Index."""
         return Spache(self._statistics, self._min_words).score()
+        
+    def lix(self):
+        """Läsbarhetsindex."""
+        return Lix(self._statistics, self._min_words).score()
 
     def statistics(self):
         return {
             'num_letters': self._statistics.num_letters,
             'num_words': self._statistics.num_words,
+            'num_long_words': self._statistics.num_long_words,
             'num_sentences': self._statistics.num_sentences,
             'num_polysyllabic_words': self._statistics.num_poly_syllable_words,
             'avg_words_per_sentence': self._statistics.avg_words_per_sentence,
