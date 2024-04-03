@@ -244,7 +244,7 @@ print(lw.grade_level)
 
 ### Lix
 
-Lix (abbreviation of Swedish läsbarhetsindex, "readability index") is a readability measure for Scandinavian and West European languages developed bu Carl-Hugo Björnsson. It is defined as the sum of average sentence length and the percentage of words with more than six letters. 
+Lix (abbreviation of Swedish läsbarhetsindex, "readability index") is a readability measure for Scandinavian and West European languages developed by Carl-Hugo Björnsson. It is defined as the sum of average sentence length and the percentage of words with more than six letters. 
 
 **_call:_**
 
