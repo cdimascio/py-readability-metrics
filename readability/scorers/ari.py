@@ -1,39 +1,21 @@
 import math
-from readability.exceptions import ReadabilityException
+from readability.scorers.base_scorer import ReadabilityScorer
 
 
-class Result:
-    def __init__(self, score, grade_levels, ages):
-        self.score = score
-        self.grade_levels = grade_levels
-        self.ages = ages
 
-    def __str__(self):
-        return "score: {}, grade_levels: {}, ages: {}". \
-            format(self.score, self.grade_levels, self.ages)
-
-
-class ARI:
+class ARI(ReadabilityScorer):
     def __init__(self, stats, min_words=100):
-        self._stats = stats
-        if stats.num_words < min_words:
-            raise ReadabilityException('{} words required.'.format(min_words))
+        super().__init__(stats, min_words)
+        self.scorer_name = "ARI"
 
-    def score(self):
-        score = self._score()
-        return Result(
-            score=score,
-            grade_levels=self._grade_levels(score),
-            ages=self._ages(score))
-
-    def _score(self):
+    def _raw_score(self):
         s = self._stats
         letters_per_word = s.num_letters / s.num_words
         words_per_sent = s.num_words / s.num_sentences
         return 4.71 * letters_per_word + 0.5 * words_per_sent - 21.43
 
-    def _grade_levels(self, score):
-        score = math.ceil(score)
+    def _grade_level(self):
+        score = math.ceil(self._score)
         if score <= 1:
             return ['K']
         elif score <= 2:
@@ -63,8 +45,8 @@ class ARI:
         else:
             return ['college_graduate']
 
-    def _ages(self, score):
-        score = math.ceil(score)
+    def _age(self):
+        score = math.ceil(self._score)
         if score <= 1:
             return [5, 6]
         elif score <= 2:
