@@ -26,6 +26,10 @@ class AnalyzerStatistics:
         return self.stats['num_words']
 
     @property
+    def num_long_words(self):
+        return self.stats['num_long_words']
+        
+    @property
     def num_sentences(self):
         return self.stats['num_sentences']
 
@@ -71,6 +75,7 @@ class Analyzer:
         syllable_count = 0
         poly_syllable_count = 0
         word_count = 0
+        long_word_count = 0
         letters_count = 0
         gunning_complex_count = 0
         dale_chall_complex_count = 0
@@ -92,11 +97,14 @@ class Analyzer:
 
         for t in tokens:
 
+            num_word_letters = 0
             if not self._is_punctuation(t):
                 word_count += 1
                 word_syllable_count = count_syllables(t)
                 syllable_count += word_syllable_count
                 letters_count += len(t)
+                word_num_letters = len(t)
+                long_word_count += 1 if word_num_letters > 6 else 0
                 poly_syllable_count += 1 if word_syllable_count >= 3 else 0
                 gunning_complex_count += \
                     1 if is_gunning_complex(t, word_syllable_count) \
@@ -113,6 +121,7 @@ class Analyzer:
             'num_syllables': syllable_count,
             'num_poly_syllable_words': poly_syllable_count,
             'num_words': word_count,
+            'num_long_words': long_word_count,
             'num_sentences': sentence_count,
             'num_letters': letters_count,
             'num_gunning_complex': gunning_complex_count,

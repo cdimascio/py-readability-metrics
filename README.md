@@ -2,7 +2,7 @@
 ![Travis Build](https://travis-ci.org/cdimascio/py-readability-metrics.svg?branch=master) ![Python](https://img.shields.io/badge/python-3.x-blue.svg) [![Documentation Status](https://readthedocs.org/projects/py-readability-metrics/badge/?version=latest)](https://py-readability-metrics.readthedocs.io/en/latest/?badge=latest) [![wheel](https://img.shields.io/badge/wheel-yes-ff00c9.svg)](https://pypi.org/project/py-readability-metrics/) [![](https://img.shields.io/gitter/room/cdimascio-oss/community?color=%23eb205a)](https://gitter.im/cdimascio-oss/community) [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
  [![MIT license](https://img.shields.io/badge/License-MIT-green.svg)](https://lbesson.mit-license.org/)
 
-Score the _readability_ of text using popular readability formulas and metrics including: [Flesch Kincaid Grade Level](#flesch-kincaid-grade-level), [Flesch Reading Ease](#flesch-reading-ease), [Gunning Fog Index](#gunning-fog), [Dale Chall Readability](#dale-chall-readability), [Automated Readability Index (ARI)](#automated-readability-index-ari), [Coleman Liau Index](#coleman-liau-index), [Linsear Write](#linsear-write), [SMOG](#smog), and [SPACHE](#spache). 📗
+Score the _readability_ of text using popular readability formulas and metrics including: [Flesch Kincaid Grade Level](#flesch-kincaid-grade-level), [Flesch Reading Ease](#flesch-reading-ease), [Gunning Fog Index](#gunning-fog), [Dale Chall Readability](#dale-chall-readability), [Automated Readability Index (ARI)](#automated-readability-index-ari), [Coleman Liau Index](#coleman-liau-index), [Linsear Write](#linsear-write), [SMOG](#smog), [SPACHE](#spache) and [Lix](#lix). 📗
 
 [![GitHub stars](https://img.shields.io/github/stars/cdimascio/py-readability-metrics.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/cdimascio/py-readability-metrics/stargazers/) [![Twitter URL](https://img.shields.io/twitter/url/https/github.com/cdimascio/py-readability-metrics.svg?style=social)](https://twitter.com/intent/tweet?text=Check%20out%20py-readability-metrics%20by%20%40CarmineDiMascio%20https%3A%2F%2Fgithub.com%2Fcdimascio%2Fpy-readability-metrics%20%F0%9F%91%8D)
 
@@ -34,6 +34,7 @@ r.ari()
 r.linsear_write()
 r.smog()
 r.spache()
+r.lix()
 ```
 
 **\*Note:** `text` must contain >= 100 words\*
@@ -49,6 +50,7 @@ r.spache()
 - [SMOG](#smog)
 - [Spache](#spache)
 - [Linsear Write](#linsear-write)
+- [Lix](#lix)
 
 ## Readability Metric Details and Properties
 
@@ -238,6 +240,24 @@ r.linsear_write()
 lw = r.linsear_write()
 print(lw.score)
 print(lw.grade_level)
+```
+
+### Lix
+
+Lix (abbreviation of Swedish läsbarhetsindex, "readability index") is a readability measure for Scandinavian and West European languages developed by Carl-Hugo Björnsson. It is defined as the sum of average sentence length and the percentage of words with more than six letters. 
+
+**_call:_**
+
+```python
+r.lix()
+```
+
+**_example:_**
+
+```python
+s = r.lix()
+print(s.score)
+print(s.ease)
 ```
 
 ## [Contributing](CONTRIBUTING.md)
