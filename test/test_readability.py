@@ -1,4 +1,5 @@
 import unittest
+
 from readability import Readability
 
 
@@ -90,3 +91,64 @@ class ReadabilityTest(unittest.TestCase):
         self.assertEqual(117, stats['num_words'])
         self.assertEqual(7, stats['num_sentences'])
         self.assertEqual(20, stats['num_polysyllabic_words'])
+
+class ReadabilityTestGerman(unittest.TestCase):
+    def setUp(self):
+        german_text = """
+        In der Linguistik ist der Gunning-Fog-Index ein Lesbarkeitsindex für englische Texte. Der Index schätzt die Jahre formaler Bildung, die eine Person benötigt, um den Text beim ersten Lesen zu verstehen. Ein Fog-Index von 12 erfordert beispielsweise das Leseverständnis eines Schülers der letzten Klasse einer amerikanischen High School (etwa 18 Jahre alt). Der Test wurde 1952 von Robert Gunning, einem amerikanischen Geschäftsmann, der in Zeitungs- und Lehrbuchverlagen tätig war, entwickelt.
+        Der Fog-Index wird häufig verwendet, um zu bestätigen, dass ein Text für die beabsichtigte Zielgruppe leicht lesbar ist. Texte für ein breites Publikum sollten in der Regel einen Fog-Index von weniger als 12 haben. Texte, die ein nahezu universelles Verständnis erfordern, sollten einen Index von weniger als 8 haben.
+        """
+        self.readability = Readability(german_text, language='de')
+
+    def test_flesch_german(self):
+        r = self.readability.flesch()
+        print(r)
+        self.assertGreaterEqual(r.score, 60 )
+        self.assertEqual(['13-15 jährige Schülerinnen und Schüler'], r.grade_levels)
+        self.assertEqual('mittel', r.ease)
+
+    def test_erste_wiener_sachtextformel_german(self):
+        r = self.readability.erste_wiener_sachtextformel()
+        print(r)
+        self.assertGreaterEqual( r.score, 11.0)
+        self.assertLessEqual(r.score, 12.0)
+        self.assertEqual(r.grade_level, ['11th-12th grade'])
+    
+    def test_zweite_wiener_sachtextformel_german(self):
+        r = self.readability.zweite_wiener_sachtextformel()
+        print(r)
+        self.assertGreaterEqual( r.score, 11.0)
+        self.assertLessEqual(r.score, 12.0)
+        self.assertEqual(r.grade_level, ['11th-12th grade'])
+    
+    def test_dritte_wiener_sachtextformel_german(self):
+        r = self.readability.dritte_wiener_sachtextformel()
+        print(r)
+        self.assertGreaterEqual( r.score, 11.0)
+        self.assertLessEqual(r.score, 12.0)
+        self.assertEqual(r.grade_level, ['11th-12th grade'])
+
+    def test_vierte_wiener_sachtextformel_german(self):
+        r = self.readability.vierte_wiener_sachtextformel()
+        print(r)
+        self.assertGreaterEqual( r.score, 11.0)
+        self.assertLessEqual(r.score, 12.0)
+        self.assertEqual(r.grade_level, ['11th-12th grade'])
+
+    def test_lix_lesbarkeits_index_german(self):
+        r = self.readability.lix_lesbarkeits_index()
+        print(r)
+        self.assertGreaterEqual( r.score, 11.0)
+        self.assertLessEqual(r.score, 12.0)
+        self.assertEqual(r.grade_level, ['11th-12th grade'])
+
+    def test_miyazaki_readability_index_german(self):
+        r = self.readability.miyazaki_readability_index()
+        print(r)
+        self.assertGreaterEqual( r.score, 31.0)
+        self.assertLessEqual(r.score, 50.0)
+        self.assertEqual(r.grade_level, ['post-school/college level'])
+
+    def test_gsmog_german(self):
+        r = self.readability.gsmog()
+        print(r)
